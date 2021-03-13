@@ -15,14 +15,8 @@ function setup() {
   world = engine.world;
 
   ground = new Ground(240,790,480,20);
-}
 
-function draw() {
-  background(0);  
-  Engine.update(engine);
-
-  ground.display();
-
+  
   for(var i = 0; i <= width; i = i+80){
     divisions.push(new Division(i,height-divisionHeight/2,10,divisionHeight));
   }
@@ -43,6 +37,14 @@ function draw() {
   for(var j = 40; j <= width; j = j+50){
     plinkos.push(new Plinko(j,375));
   }
+
+}
+
+function draw() {
+  background(0);  
+  Engine.update(engine);
+
+  ground.display();
 
 
   drawSprites();
